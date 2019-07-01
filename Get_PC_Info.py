@@ -170,8 +170,8 @@ if __name__ == '__main__':
         print("MAC地址：")
         f.write("MAC地址：\n")
         for macip in macsAndIpArr:
-            print("  网卡描述：{0}，IPv4：{1}，IPv6：{2}".format(macip["CAPTION"], macip["IPv4"], macip["IPv6"]))
-            f.write("  网卡描述：{0}，IPv4：{1}，IPv6：{1}\n".format(macip["CAPTION"], macip["IPv4"], macip["IPv6"]))
+            print("  网卡描述：{0}，MAC：{3}，IPv4：{1}，IPv6：{2}".format(macip["CAPTION"], macip["IPv4"], macip["IPv6"], macip["MAC"]))
+            f.write("  网卡描述：{0}，MAC：{3}，IPv4：{1}，IPv6：{1}\n".format(macip["CAPTION"], macip["IPv4"], macip["IPv6"], macip["MAC"]))
         print("\r")
         f.write("\n")
 
