@@ -131,12 +131,12 @@ if __name__ == '__main__':
     systemInfo = system_info()
     # print(systemInfo)
     with open(resultFile, "a+", encoding="utf-8") as f:
-        print("\n")
+        print("\r")
         f.write("\n")
         for k, v in systemInfo.items():
             print('{0}:{1}'.format(k, v))
             f.write('{0}:{1}\n'.format(k, v))
-        print("\n")
+        print("\r")
         f.write("\n")
 
     boardInfo = board_info()
@@ -146,13 +146,13 @@ if __name__ == '__main__':
         strMsg = "品牌型号：{0} {1}".format(boardInfo[0]["Manufacturer"], boardInfo[0]["Product"])
         print(strMsg)
         f.write(strMsg + "\n")
-        print("\n")
+        print("\r")
         f.write("\n")
 
         strMsg = "序列号：{0}".format(boardInfo[0]["SerialNumber"])
         print(strMsg)
         f.write(strMsg + "\n")
-        print("\n")
+        print("\r")
         f.write("\n")
 
     diskInfo = disk_info()
@@ -162,7 +162,7 @@ if __name__ == '__main__':
         for disk in diskInfo:
             print("  磁盘描述：{0}，磁盘序列号：{1}".format(disk["Caption"], disk["SerialNumber"]))
             f.write("  磁盘描述：{0}，磁盘序列号：{1}\n".format(disk["Caption"], disk["SerialNumber"]))
-        print("\n")
+        print("\r")
         f.write("\n")
 
     macsAndIpArr = mac_address_info()
@@ -172,6 +172,7 @@ if __name__ == '__main__':
         for macip in macsAndIpArr:
             print("  网卡描述：{0}，IPv4：{1}，IPv6：{2}".format(macip["CAPTION"], macip["IPv4"], macip["IPv6"]))
             f.write("  网卡描述：{0}，IPv4：{1}，IPv6：{1}\n".format(macip["CAPTION"], macip["IPv4"], macip["IPv6"]))
-        print("\n")
+        print("\r")
         f.write("\n")
-    os.system("pause")
+
+    rtnMsg = os.system("pause")
